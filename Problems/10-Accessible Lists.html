@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Lists</title>
+  <style>
+    section {
+      height: auto;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    hr {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <!-- <h2>Problem 1: Incorrect Nesting of List Items</h2> -->
+    <ul>
+      <div>Apple</div>
+      <div>Banana</div>
+      <div>Carrot</div>
+      <div>Dates</div>
+      <div>Eggplant</div>
+    </ul>
+  </section>
+
+  <section>
+    <!-- <h2>Problem 2: Adding Interactivity Directly to List Items</h2> -->
+    <ul>
+      <li onclick="alert('Push-up clicked')">Push-up</li>
+      <li onclick="alert('Squat clicked')">Squat</li>
+      <li onclick="alert('Pull-up clicked')">Pull-up</li>
+      <li onclick="alert('Lunge clicked')">Lunge</li>
+      <li onclick="alert('Plank clicked')">Plank</li>
+    </ul>
+
+  </section>
+
+  <section>
+    <!-- <h2>Problem 3: Complex List Items with Nested Lists</h2> -->
+    <ul>
+      <li>Samsung
+        <ul>
+          <li>Galaxy S21</li>
+          <li>Galaxy Note 20</li>
+        </ul>
+      </li>
+      <li>Apple
+          <li>iPhone 12</li>
+          <li>iPhone 11</li>
+      </li>
+      <li>Google
+        <ul>
+          <li>Pixel 5</li>
+          <li>Pixel 4a</li>
+        </ul>
+      </li>
+      <li>OnePlus
+          <li>OnePlus 9</li>
+          <li>OnePlus 8</li>
+      </li>
+      <li>Xiaomi
+        <ul>
+          <li>Mi 11</li>
+          <li>Redmi Note 10</li>
+        </ul>
+      </li>
+    </ul>
+   
+  </section>
+
+  <section>
+    <!-- <h2>Problem 4: Inconsistent Use of Ordered and Unordered Lists</h2> -->
+    <ul>
+      <li>Shirt 1</li>
+      <li>Shirt 2</li>
+      <li>Shirt 3</li>
+      <li>Shirt 4</li>
+      <li>Shirt 5</li>
+    </ul>
+  </section>
+
+</body>
+</html>

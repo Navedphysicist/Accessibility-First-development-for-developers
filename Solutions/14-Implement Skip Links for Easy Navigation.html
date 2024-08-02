@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Site</title>
+    <style>
+        * :focus {
+            outline: 4px solid orange;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #0E7AE9;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 3px;
+            font-family: 'Verdana', sans-serif;
+            text-transform: capitalize;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background-color: white;
+            color: red;
+            text-decoration: underline;
+            padding: 3px;
+            border-radius: 2px;
+
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .container p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            background-color: #008cba;
+            color: white;
+            padding: 15px 25px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        .buttons button:hover,
+        .buttons button:focus {
+            background-color: white;
+            color: red;
+            text-decoration: underline;
+            border-radius: 2px;
+        }
+
+        .button-container {
+            background-color: #eaeaea;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .button-container img {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .skip-links {
+            list-style: none;
+            margin:0;
+            padding:0;
+            position: relative;
+        }
+        .skip-links li a {
+            background-color:#fff ;
+            display: block;
+            left: -6000px;
+            padding:0.5em;
+            position:absolute;
+        }
+        .skip-links li a:focus {
+        left:0;
+
+        }
+         main {
+            width: 35em;
+            height:40em;
+            margin:auto;
+            
+         }
+
+
+       main:focus {
+	    outline: 4px dotted orange
+}  
+        
+    </style>
+</head>
+
+<body>
+    <ul class="skip-links">
+        <li><a href="#main">Skip to Main Content</a></li>
+    </ul>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about us</a></li>
+                <li><a href="#products">products</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#contact">contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="container" tabindex="-1">
+        <h1>Welcome to our Shopping Site</h1>
+        <p>Discover a wide range of products at unbeatable prices. Shop with confidence and enjoy fast shipping, easy
+            returns, and excellent customer service. Our site offers a user-friendly experience to make your shopping
+            seamless and enjoyable. Let's checkout different categories <a href="#">Click here</a> </p>
+        <div class="button-container">
+            <a href="#products">
+                <img src="./images/gpt-guitar.webp" alt="Shop Image">
+            </a>
+            <div class="buttons">
+                <button onclick="window.location.href='#shop-now'">Shop Now</button>
+                <button onclick="window.location.href='#deals'">View Deals</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

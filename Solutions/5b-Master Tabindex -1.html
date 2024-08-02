@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Tabindex Demonstration</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="update-content">Update Content</button>
+        <div id="content" tabindex="-1">Original Content</div>
+    </div>
+
+    <script>
+        document.getElementById('update-content').addEventListener('click', () => {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = 'Updated Content';
+            contentDiv.classList.add('highlight');
+            contentDiv.focus();
+        });
+    </script>
+</body>
+</html>

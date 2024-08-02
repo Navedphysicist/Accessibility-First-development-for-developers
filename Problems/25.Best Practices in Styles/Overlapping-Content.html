@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlapping Content Problem</title>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 200px;
+            border: 1px solid #000;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="absolute-box">
+            This box may overlap other content when the page is resized or zoomed in.
+        </div>
+        <div>
+            This is some additional content that may be overlapped by the absolute positioned box. Let's add more text
+            here to see the overlap issue clearly. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis
+            lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
+        </div>
+    </div>
+</body>
+
+</html>

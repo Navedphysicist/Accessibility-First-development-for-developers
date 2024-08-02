@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            margin: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttons button {
+            background-color: #008cba;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        .buttons button:hover,
+        .buttons button:focus {
+            background-color: white;
+            color: red;
+            text-decoration: underline;
+            border-radius: 2px;
+        }
+
+        .button-container {
+            background-color: #eaeaea;
+            border-radius: 10px;
+            padding: 5px;
+            width: 30%;
+            text-align: center;
+            margin: 5px;
+            outline: 1px solid black;
+        }
+
+        .button-container img {
+            width: 50%;
+            height: auto;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            border: 1px dotted red;
+            margin: 4px;
+        }
+
+         .visuallyhidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+
+        } 
+    </style>
+</head>
+<body>
+    <section class="first"> display: none
+        <div class="button-container" style="display: none;">
+            <a href="#products">
+                <img src="./images/gpt-guitar.webp" alt="Shop Image">
+            </a>
+            <div class="buttons">
+                <button onclick="window.location.href='#shop-now'">Shop Now</button>
+                <button onclick="window.location.href='#deals'">View Deals</button>
+            </div>
+        </div>
+    </section>
+    <section class="second">hidden
+        <div class="button-container" hidden>
+            <a href="#products">
+                <img src="./images/Guitar.webp" alt="Shop Image">
+            </a>
+            <div class="buttons">
+                <button onclick="window.location.href='#shop-now'">Shop Now</button>
+                <button onclick="window.location.href='#deals'">View Deals</button>
+            </div>
+        </div>
+    </section>
+    <section class="third">opacity:0
+        <div class="button-container" style="opacity: 0;">
+            <a href="#products">
+                <img src="./images/Sitar.webp" alt="Shop Image">
+            </a>
+            <div class="buttons">
+                <button onclick="window.location.href='#shop-now'">Shop Now</button>
+                <button onclick="window.location.href='#deals'">View Deals</button>
+            </div>
+        </div>
+    </section>
+    <section class="fourth">visibility: hidden
+        <div class="button-container" style="visibility: hidden;">
+            <a href="#products">
+                <img src="./images/piano.webp" alt="Shop Image">
+            </a>
+            <div class="buttons">
+                <button onclick="window.location.href='#shop-now'">Shop Now</button>
+                <button onclick="window.location.href='#deals'">View Deals</button>
+            </div>
+        </div>
+    </section>
+    <section class="fifth">visuallyhidden
+        <div class="visuallyhidden">
+                <a href="#products">
+                    <img src="./images/flute.webp" alt="Shop Image">
+                </a>
+                <div class="buttons">
+                    <button onclick="window.location.href='#shop-now'">Shop Now</button>
+                    <button onclick="window.location.href='#deals'">View Deals</button>
+                </div>
+        </div>
+    </section>
+    <section class="sixth">aria-hidden=true
+        <div class="button-container" aria-hidden="true">
+            <a href="#products">
+                <img src="./images/DALL·E 2024-07-28 01.54.16 - A single piano with an orange background. The text 'Shop now' is displayed prominently.webp"
+                    alt="Shop Image">
+            </a>
+            <div class="buttons">
+                <button onclick="window.location.href='#shop-now'">Shop Now</button>
+                <button onclick="window.location.href='#deals'">View Deals</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

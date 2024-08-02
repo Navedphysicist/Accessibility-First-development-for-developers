@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send Us an Email</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* line-height: 1.6; */
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    .required {
+      color: red;
+      margin-left: 5px;
+    }
+    small {
+      display: block;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    .form-section {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <form aria-labelledby="form-title">
+    <h1 id="form-title" aria-describedby="Ins">Send Us an Email!</h1>
+    <p id="Ins">Required fields are marked with <span class="required">*</span></p>
+
+
+    <div class="form-section">
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label>First Name<span class="required">*</span>
+            <input type="text" aria-describedby="example" required>
+        </label>
+        <small id="example">Example: John</small>
+
+        <label>Last Name<span class="required">*</span>
+            <input type="text" required>
+        </label>
+         <small>Example: Doe</small>
+
+        <label>Email<span class="required">*</span>
+        <input type="email" required>
+        </label>
+        <small>Example: john.doe@example.com</small>
+
+        <label>Phone Number<span class="required">*</span>
+            <input type="tel"  pattern="[0-9]{10}" required>
+        </label>
+        <small>10 digits, Example: 1234567890</small>
+      </fieldset>
+    </div>
+
+    <div class="form-section">
+      <fieldset>
+        <legend>Gender</legend>
+
+        <label>
+          <input type="radio" name="gender" value="male" required> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="female" required> Female
+        </label>
+        <label>
+          <input type="radio" name="gender" value="other" required> Other
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="form-section">
+      <fieldset>
+        <legend>Your Message</legend>
+
+        <label>Message
+            <textarea  rows="5" ></textarea>
+        </label>
+        <small>Write your message here.</small>
+      </fieldset>
+    </div>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+</body>
+</html>

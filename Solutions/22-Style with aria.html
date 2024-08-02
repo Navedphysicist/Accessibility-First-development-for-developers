@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play/Pause Button Example</title>
+  <style>
+    .play-pause-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .play-pause-btn[aria-pressed="true"] {
+      background-color: #28a745;
+    }
+    .play-pause-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+      margin-right: 8px;
+    }
+    .content {
+      display: none;
+      margin-top: 10px;
+    }
+    .content[aria-hidden="false"] {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button id="playPauseBtn" class="play-pause-btn" aria-pressed="false" aria-controls="content">
+    <svg viewBox="0 0 64 64" id="playIcon">
+      <polygon points="16,8 56,32 16,56"></polygon>
+    </svg>
+    Play
+  </button>
+  <div id="content" class="content" aria-hidden="true">Video is paused.</div>
+
+  <script>
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const content = document.getElementById('content');
+
+    playPauseBtn.addEventListener('click', () => {
+      const isPressed = playPauseBtn.getAttribute('aria-pressed') === 'true';
+      playPauseBtn.setAttribute('aria-pressed', !isPressed);
+      content.setAttribute('aria-hidden', isPressed);
+
+      if (!isPressed) {
+        playPauseBtn.innerHTML = `
+          <svg viewBox="0 0 64 64">
+            <rect x="16" y="8" width="12" height="48"></rect>
+            <rect x="36" y="8" width="12" height="48"></rect>
+          </svg>
+          Pause
+        `;
+        content.textContent = 'Video is playing...';
+      } else {
+        playPauseBtn.innerHTML = `
+          <svg viewBox="0 0 64 64">
+            <polygon points="16,8 56,32 16,56"></polygon>
+          </svg>
+          Play
+        `;
+        content.textContent = 'Video is paused.';
+      }
+    });
+  </script>
+</body>
+</html>

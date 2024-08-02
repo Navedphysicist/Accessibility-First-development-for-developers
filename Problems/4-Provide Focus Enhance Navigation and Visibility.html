@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #0E7AE9;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 3px;
+            font-family: 'Verdana', sans-serif;
+        }
+        nav ul li a:hover {
+            background-color: #1361ae;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .container p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button:hover{
+            background-color: #247795;
+        }
+
+        .buttons button {
+            background-color: #008cba;
+            color: white;
+            padding: 15px 25px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        .button-container {
+            background-color: #eaeaea;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .button-container img {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" title="Home" >HOME</a></li>
+                <li><a href="#about" title="About us"  >ABOUT US</a></li>
+                <li><a href="#products" title="Products">PRODUCTS</a></li>
+                <li><a href="#services" title="Services" >SERVICES</a></li>
+                <li><a href="#contact" title="Contact us" >CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>Welcome to our Shopping Site</h1>
+        <p>Discover a wide range of products at unbeatable prices. Shop with confidence and enjoy fast shipping, easy
+            returns, and excellent customer service. Our site offers a user-friendly experience to make your shopping
+            seamless and enjoyable.Let's checkout different categories <a href="#">Click here</a> </p>
+        <div class="button-container">
+            <a href="#products">
+                <img src="https://files.oaiusercontent.com/file-4Rrm783c45b9iCJMcXz3N4Sj?se=2024-07-19T05%3A58%3A43Z&sp=r&sv=2023-11-03&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D18cb81ef-2022-43c2-b350-14c56e87db78.webp&sig=EdTqVtlbkN6KWhZWjCA709irOoL0enEHXk3RcZvFSVU%3D"
+                    alt="Shop Image">
+            </a>
+            <div class="buttons">
+                <button onclick="window.location.href='#shop-now'">Shop Now</button>
+                <button onclick="window.location.href='#deals'">View Deals</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

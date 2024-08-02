@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inaccessible Drag-and-Drop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f0f0;
+    }
+    h2 {
+      color: #333;
+    }
+    .draggable {
+      width: 150px;
+      height: 50px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #000;
+      background-color: #f4f4f4;
+      cursor: grab;
+      text-align: center;
+      line-height: 30px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .droppable {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      padding: 10px;
+      border: 2px dashed #000;
+      background-color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h2>Problem: Inaccessible Drag-and-Drop</h2>
+  <div class="draggable" draggable="true">Drag me</div>
+  <div class="droppable">Drop here</div>
+</body>
+<script>
+  const draggable = document.querySelector('.draggable');
+  const droppable = document.querySelector('.droppable');
+
+  draggable.addEventListener('dragstart', () => {
+    draggable.classList.add('dragging');
+  });
+
+  draggable.addEventListener('dragend', () => {
+    draggable.classList.remove('dragging');
+  });
+
+  droppable.addEventListener('dragover', (event) => {
+    event.preventDefault();
+  });
+
+  droppable.addEventListener('drop', () => {
+    droppable.appendChild(draggable);
+  });
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Tree Example</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <ul role="tree" aria-label="File Explorer">
+    <li role="treeitem" aria-expanded="false" id="documents" aria-labelledby="documents-label">
+      <div>
+        <button aria-controls="documents-group" aria-expanded="false"></button>
+        <span id="documents-label">Documents</span>
+      </div>
+      <ul role="group" id="documents-group" hidden>
+        <li role="treeitem" id="resume">Resume.docx</li>
+        <li role="treeitem" id="cover-letter">CoverLetter.docx</li>
+        <li role="treeitem" id="cover-letter">Invitation.docx</li>
+        <li role="treeitem" id="cover-letter">NewsLetter.docx</li>
+      </ul>
+    </li>
+    <li role="treeitem" aria-expanded="false" id="pictures" aria-labelledby="pictures-label">
+      <div>
+        <button aria-controls="pictures-group" aria-expanded="false"></button>
+        <span id="pictures-label">Pictures</span>
+      </div>
+      <ul role="group" id="pictures-group" hidden>
+        <li role="treeitem" id="vacation">Vacation.jpg</li>
+        <li role="treeitem" id="birthday">Birthday.png</li>
+      </ul>
+    </li>
+  </ul>
+
+</body>
+<script src="./scripts.js"></script>
+</html>

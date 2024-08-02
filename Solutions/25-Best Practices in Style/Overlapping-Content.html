@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible Layout Solution</title>
+  <style>
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .flex-box {
+      flex: 1;
+      min-width: 200px;
+      border: 1px solid #000;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="flex-box">
+      This box will adjust its position and size to avoid overlapping content when the page is resized or zoomed in.
+    </div>
+    <div class="flex-box">
+      This is some additional content that will be positioned flexibly.
+    </div>
+  </div>
+</body>
+</html>

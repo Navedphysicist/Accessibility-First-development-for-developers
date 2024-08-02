@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Us an Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* line-height: 1.6; */
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color:red;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .required {
+            color: red;
+            margin-left: 5px;
+        }
+
+        small {
+            display: block;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <strong>Send Us an Email!</strong>
+        <div class="form-section">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="">Firstname:</label>
+                <input type="text"  placeholder="Firstname ">
+                <label for="">Lastname:</label>
+                <input type="text"  placeholder="Lastname" >
+                <input type="email" placeholder="Email">
+                <input type="tel" pattern="[0-9]{10}" placeholder="Phone no:">
+            </fieldset>
+        </div>
+        <div class="form-section">
+            <fieldset>
+                <legend>Gender</legend>
+                <input type="radio" name="gender" value="male" required> Male
+                <input type="radio" name="gender" value="female" required> Female
+                <input type="radio" name="gender" value="other" required> Other
+                </label>
+            </fieldset>   
+            <textarea rows="5" placeholder="Your text here."></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>

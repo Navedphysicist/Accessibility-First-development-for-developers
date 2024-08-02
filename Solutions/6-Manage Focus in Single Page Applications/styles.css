@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+h1:focus{
+    outline: 2px solid rgb(71, 71, 169);
+}
+
+section {
+    display: none;
+    padding: 20px;
+}
+
+section.active {
+    display: block;
+}

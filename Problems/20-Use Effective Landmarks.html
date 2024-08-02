@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landmark Navigation Example</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .landmark-box {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        header,
+        footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        nav,
+        [role="navigation"],
+        main,
+        aside,
+        section,
+        [role="complementary"] {
+            background-color: #f0f0f0;
+            margin: 10px 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .side-nav,
+        .complementary {
+            width: 20%;
+        }
+
+        .content,
+        section {
+            width: 60%;
+        }
+
+        ol {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+
+        header ol,
+        footer ol {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landmark-box">
+        <h1>Main Navigation</h1>
+        <ol>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
+        </ol>
+    </div>
+    <div class="container">
+        <div class="landmark-box side-nav">
+            <h2>Side Navigation</h2>
+            <ol>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+                <li><a href="#">Link 5</a></li>
+            </ol>
+        </div>
+        <div class="landmark-box content">
+            <h2>Main Content</h2>
+            <ol>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+                <li><a href="#">Link 5</a></li>
+            </ol>
+            <div class="landmark-box">
+                <h3>Region</h3>
+                <ol>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Link 5</a></li>
+                </ol>
+            </div>
+        </div>
+        <div  class="landmark-box complementary">
+            <h2>Complementary Section 1</h2>
+            <ol>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+                <li><a href="#">Link 5</a></li>
+            </ol>
+        </div>
+        <div class="landmark-box complementary">
+            <h2>Complementary Section 2</h2>
+            <ol>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+                <li><a href="#">Link 5</a></li>
+            </ol>
+        </div>
+    </div>
+    <footer class="landmark-box">
+        <h2>Footer</h2>
+        <ol>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
+        </ol>
+    </footer>
+</body>
+
+</html>

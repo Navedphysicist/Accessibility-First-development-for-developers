@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARIA Controls</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <button aria-controls="appleSection" aria-expanded="false" aria-labelledby="appleSection">Show Apple Details</button>
+    <div id="appleSection" hidden>
+      <p>Apples are nutritious fruits that come in various varieties such as Fuji, Gala, and Granny Smith.</p>
+    </div>
+  
+    <button aria-controls="bananaSection" aria-expanded="false">Show Banana Details</button>
+    <div id="bananaSection" hidden>
+      <p>Bananas are rich in potassium and provide quick energy. Common types include Cavendish and Plantain.</p>
+    </div>
+  
+    <button aria-controls="orangeSection" aria-expanded="false">Show Orange Details</button>
+    <div id="orangeSection" hidden>
+      <p>Oranges are citrus fruits known for their high vitamin C content. Varieties include Navel, Valencia, and Blood Orange.</p>
+    </div>
+</body>
+<script src="./scripts.js"></script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Grid View</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .icon i {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon-grid">
+        <div class="icon">
+            <i class="fas fa-home"></i>
+        </div>
+        <div class="icon">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="icon">
+            <i class="fas fa-cog"></i>
+        </div>
+        <div class="icon">
+            <i class="fas fa-envelope"></i>
+        </div>
+    </div>
+</body>
+</html>

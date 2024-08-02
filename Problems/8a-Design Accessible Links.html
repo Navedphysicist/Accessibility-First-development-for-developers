@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility</title>
+  <script src="https://kit.fontawesome.com/1812ede6f3.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      /* Light grey background */
+    }
+
+    .section {
+      height: 400px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #ffffff;
+    }
+
+    .low-contrast {
+      color: #726464;
+      /* Light gray text on white background */
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+      /* No underline on links */
+    }
+
+    a:focus {
+      outline: 3px solid teal;
+    }
+
+    .section a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .image-link img {
+      width: 150px;
+      height: 200px;
+      padding: 5px;
+
+    }
+
+    a:focus {
+      outline: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Problem 1: A Link with very low contrast ratio looking similar to the background -->
+  <div class="section" style="background-color: #e0e0e0;">
+    <p>Links with very low contrast ratio looking similar to the background</p>
+    <a href="#" class="low-contrast">Play games</a>
+    <br />
+    <a href="#" class="low-contrast">Click here to Play video</a>
+  </div>
+  <hr>
+
+  <!-- Problem 2: A Link which is opening in a new tab -->
+  <div class="section">
+    <p>This link opens in a new tab:</p>
+    <span id="label">Opens in new Window</span>
+    <a href="https://www.example.com" target="_blank">Book an Appointment</a>
+  </div>
+  <hr>
+
+  <!-- Problem 3: Links with no proper destination meaning -->
+  <div class="section">
+    <p>This is a paragraph about a fascinating topic that you might want to explore further. If you're interested, you
+      can <a href="#">click here </a> to read more about it. Additionally, there are other related articles that you
+      might find intriguing. For instance, <a href="#">read more</a> about the latest advancements in this field. Don't
+      miss out on our in-depth analysis, <a href="#">check out</a> our comprehensive guide, and for more info, <a
+        href="#">click here</a>.</p>
+  </div>
+  <hr>
+
+  <!-- Problem 4: Link with image logo inside it -->
+  <div class="section">
+    <a href="#">
+      <img src="//www.axelerant.com/hubfs/raw_assets/public/Axelerant_theme_2022/images/Axelerant-Logo-color.svg"
+        alt="Company Logo">
+    </a>
+  </div>
+  <hr>
+
+  <!-- Problem 5: 3 images in a row as a link -->
+  <div class="section">
+    <p>Here are three linked images:</p>
+    <a href="#" class="image-link"><img src="images/1721619205956.jpg" alt="The Power of Your Subconscious Mind"></a>
+    <a href="#" class="image-link"><img src="images/IMG_3954.jpg" alt="Sophies World"></a>
+    <a href="#" class="image-link"><img src="images/WhatsApp Image 2024-07-16 at 10.15.04 AM.jpeg"
+        alt="Never Split the Difference"></a>
+  </div>
+  <hr>
+</body>
+
+</html>

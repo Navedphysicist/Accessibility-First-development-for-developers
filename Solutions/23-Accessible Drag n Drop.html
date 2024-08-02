@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Drag-and-Drop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f0f0;
+    }
+    h2 {
+      color: #333;
+    }
+    .draggable {
+      width: 150px;
+      height: 50px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #000;
+      background-color: #f4f4f4;
+      cursor: grab;
+      text-align: center;
+      line-height: 30px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      transition: border 0.3s, background-color 0.3s;
+    }
+    .draggable[aria-grabbed="true"] {
+      border: 2px solid #00f;
+      cursor: grabbing;
+      background-color: #e0e7ff;
+    }
+    .droppable {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      padding: 10px;
+      border: 2px dashed #000;
+      background-color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      transition: border 0.3s, background-color 0.3s;
+    }
+    .droppable[aria-dropeffect="move"] {
+      border: 2px dashed #00f;
+      background-color: #e0f7ff;
+    }
+  </style>
+</head>
+<body>
+  <h2>Accessible Drag-and-Drop</h2>
+  <div id="status" aria-live="assertive" style="position: absolute; left: -9999px;"></div>
+  <div class="draggable" role="button" tabindex="0" draggable="true" aria-grabbed="false">Drag me</div>
+  <div class="droppable" role="application" aria-dropeffect="none" tabindex="0">Drop here</div>
+</body>
+<script>
+  const draggable = document.querySelector('.draggable');
+  const droppable = document.querySelector('.droppable');
+  const status = document.getElementById('status');
+
+  function updateStatus(message) {
+    status.textContent = message;
+  }
+
+  let currentlyDragged = null;
+
+  // Mouse Events
+  draggable.addEventListener('dragstart', () => {
+    draggable.setAttribute('aria-grabbed', 'true');
+    droppable.setAttribute('aria-dropeffect', 'move');
+    updateStatus('Dragging started');
+  });
+
+  draggable.addEventListener('dragend', () => {
+    draggable.setAttribute('aria-grabbed', 'false');
+    droppable.setAttribute('aria-dropeffect', 'none');
+    updateStatus('Dragging ended');
+  });
+
+  droppable.addEventListener('dragover', (event) => {
+    event.preventDefault();
+  });
+
+  droppable.addEventListener('drop', () => {
+    droppable.appendChild(draggable);
+    draggable.setAttribute('aria-grabbed', 'false');
+    droppable.setAttribute('aria-dropeffect', 'none');
+    updateStatus('Item dropped');
+  });
+
+  // Keyboard Events for Draggable
+  draggable.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      const isGrabbed = draggable.getAttribute('aria-grabbed') === 'true';
+      if (!isGrabbed) {
+        draggable.setAttribute('aria-grabbed', 'true');
+        droppable.setAttribute('aria-dropeffect', 'move');
+        currentlyDragged = draggable;
+        updateStatus('Dragging started');
+      } else {
+        draggable.setAttribute('aria-grabbed', 'false');
+        droppable.setAttribute('aria-dropeffect', 'none');
+        currentlyDragged = null;
+        updateStatus('Dragging ended');
+      }
+    }
+  });
+
+  // Keyboard Events for Droppable
+  droppable.addEventListener('keydown', (event) => {
+    if ((event.key === 'Enter' || event.key === ' ') && currentlyDragged) {
+      event.preventDefault();
+      droppable.appendChild(currentlyDragged);
+      currentlyDragged.setAttribute('aria-grabbed', 'false');
+      droppable.setAttribute('aria-dropeffect', 'none');
+      currentlyDragged = null;
+      updateStatus('Item dropped');
+    }
+  });
+
+  // Ensure droppable is focusable
+  droppable.setAttribute('tabindex', '0');
+</script>
+</html>

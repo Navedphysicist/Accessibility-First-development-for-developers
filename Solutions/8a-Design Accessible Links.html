@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility</title>
+    <script src="https://kit.fontawesome.com/1812ede6f3.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            /* Light grey background */
+        }
+
+        .section {
+            height: 400px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        a {
+            text-decoration: underline;
+            /* No underline on links */
+        }
+
+        a:focus {
+            outline: 3px solid teal;
+        }
+
+        .section a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .image-link img {
+            width: 150px;
+            height: 200px;
+            padding: 5px;
+            border-bottom: 2px solid black;
+
+        }
+
+        .image-link img:hover {
+            border-bottom: 2px solid lime;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Problem 1: A Link with very low contrast ratio looking similar to the background -->
+    <div class="section">
+        <a href="games.html" >Play games</a>
+        <br />
+        <a href="videos.html" >Click here to Play video</a>
+    </div>
+    <hr>
+
+    <!-- Problem 2: A Link which is opening in a new tab -->
+    <div class="section">
+        <!-- <p>This link opens in a new tab:</p> -->
+        <span id="label">Opens in new Window</span>
+        <a href="https://www.example.com" aria-describedby="label" rel="noopener" target="_blank">Book an
+            Appointment<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                viewBox="0 0 26 26">
+                <path
+                    d="M 12.3125 0 C 10.425781 0.00390625 10.566406 0.507813 11.5625 1.5 L 14.78125 4.71875 L 9.25 10.25 C 8.105469 11.394531 8.105469 13.230469 9.25 14.375 L 11.6875 16.78125 C 12.832031 17.921875 14.667969 17.925781 15.8125 16.78125 L 21.34375 11.28125 L 24.5 14.4375 C 25.601563 15.539063 26 15.574219 26 13.6875 L 26 3.40625 C 26 -0.03125 26.035156 0 22.59375 0 Z M 4.875 5 C 2.183594 5 0 7.183594 0 9.875 L 0 21.125 C 0 23.816406 2.183594 26 4.875 26 L 16.125 26 C 18.816406 26 21 23.816406 21 21.125 L 21 14.75 L 18 17.75 L 18 21.125 C 18 22.160156 17.160156 23 16.125 23 L 4.875 23 C 3.839844 23 3 22.160156 3 21.125 L 3 9.875 C 3 8.839844 3.839844 8 4.875 8 L 8.3125 8 L 11.3125 5 Z">
+                </path>
+            </svg></a>
+    </div>
+    <hr>
+
+    <!-- Problem 3: Links with no proper destination meaning -->
+    <div class="section">
+        <p>This is a paragraph about a fascinating topic that you might want to explore further. If you're interested,
+            you can <a href="#">click here to explore Web development</a> to read more about it. Additionally, there are
+            other related articles that you might find intriguing. For instance, <a href="#">read more</a> about the
+            latest advancements in this field. Don't miss out on our in-depth analysis, <a href="#">check out</a> our
+            comprehensive guide, and for more info, <a href="#">click here</a>.</p>
+    </div>
+    <hr>
+
+    <!-- Problem 4: Link with image logo inside it -->
+    <div class="section">
+        <a href="#">
+            <img src="//www.axelerant.com/hubfs/raw_assets/public/Axelerant_theme_2022/images/Axelerant-Logo-color.svg"
+                alt="Home Page">
+        </a>
+    </div>
+    <hr>
+
+    <!-- Problem 5: 3 images in a row as a link -->
+    <div class="section">
+        <p>Here are three linked images:</p>
+        <a href="#" class="image-link"><img src="images/1721619205956.jpg"
+                alt="The Power of Your Subconscious Mind"></a>
+        <a href="#" class="image-link"><img src="images/IMG_3954.jpg" alt="Sophies World"></a>
+        <a href="#" class="image-link"><img src="images/WhatsApp Image 2024-07-16 at 10.15.04 AM.jpeg"
+                alt="Never Split the Difference"></a>
+    </div>
+    <hr>
+</body>
+
+</html>

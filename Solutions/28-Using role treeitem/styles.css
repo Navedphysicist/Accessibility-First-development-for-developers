@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+ul[role="tree"] {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul[role="group"] {
+  list-style-type: none;
+  padding-left: 20px;
+  margin-left: 0;
+}
+
+li[role="treeitem"] {
+  margin-bottom: 10px;
+}
+
+li[role="treeitem"] > div {
+  display: flex;
+  align-items: center;
+}
+
+li[role="treeitem"] > div > button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+li[role="treeitem"] > div > button[aria-expanded="false"]::before {
+  content: "▶";
+}
+
+li[role="treeitem"] > div > button[aria-expanded="true"]::before {
+  content: "▼";
+}
+
+li[role="treeitem"] > div > button[disabled]::before {
+  content: "•";
+}
+
+li[role="treeitem"] > div > span {
+  cursor: pointer;
+  padding: 5px;
+}
+
+li[role="treeitem"] > div > span:hover {
+  background-color: #e0e0e0;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Labels Problems</title>
+  <style>
+    section {
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    /* hr {
+      margin: 40px 0;
+    } */
+    .main { 
+        width:20%;
+    }
+    .main-mid {
+        display: flex;
+        justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+        <input type="text" placeholder="First Name"> <br>
+        <input type="text" placeholder="Last Name"><br>
+        <input type="email" placeholder="Email"><br>
+  </section>
+  <hr>
+
+  <section>
+
+    <div class="main">
+        <div class="main-mid">
+            <label>Username</label>
+            <input type="text" name="username">
+        </div>
+        <div class="main-mid">
+            <label>Password</label>
+            <input type="password" name="password">
+        </div>
+    </div>
+
+     
+ 
+  </section>
+  <hr>
+  <section>
+    <label>Username</label> <br>
+    <input type="text" name="username"> <br>
+    <label>Password</label> <br>
+    <input type="password" name="password"> <br>
+
+  </section>
+  <hr>
+
+
+
+  <section>
+    <p>Hobbies</p>
+    <div>
+      <input type="radio" name="hobbies">
+      Singing
+    </div>
+    <div>
+      <input type="radio" name="hobbies">
+      Coding
+    </div>
+    <div>
+      <input type="radio" name="hobbies">
+      Playing
+    </div>
+  </section>
+  <hr>
+
+
+<section>
+     <span>Preferred Contact Methods</span>
+    <div>
+      <input type="checkbox" name="contact-methods">
+      <label>Email</label>
+    </div>
+    <div>
+        <input type="checkbox" name="contact-methods">
+        <label>Phone</label>
+    </div>
+    <div>
+        <input type="checkbox" name="contact-methods">
+        <label>Mail</label>
+    </div>
+</section>
+ 
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Accessible Status Messages</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section>
+        <h3>Role Alert Example</h3>
+        <div id="alertMessage" class="alert">
+            Could not connect to the server
+        </div>
+        <button id="alertButton">Check Connection</button>
+    </section>
+
+    <section>
+        <h3>Aria Live Example</h3>
+        <div id="statusMessage" class="status">
+            Status: Checking server connection...
+        </div>
+        <button id="statusButton">Update Status</button>
+    </section>
+</body>
+<script src="./script.js"></script>
+</html>
